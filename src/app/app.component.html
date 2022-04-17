@@ -1,4 +1,6 @@
 <div *ngFor="let department of departments">
-  <h1>{{ department.displayName }}</h1>
-  <app-artwork-carousel [departmentId]="department.departmentId"></app-artwork-carousel>
+  <div *ngIf="department.artworks?.length">
+    <h1>{{ department.displayName }}</h1>
+    <app-artwork-carousel [department]="department"></app-artwork-carousel>
+  </div>
 </div>
