@@ -1,0 +1,19 @@
+.artwork-image {
+    height: 20rem;
+  }
+  
+  .artwork-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 1000px) {
+      .p-carousel .p-carousel-indicators .p-carousel-indicator button{
+      width: 10rem !important; 
+      height: 0.5rem !important
+      ;
+    }
+  }
+  

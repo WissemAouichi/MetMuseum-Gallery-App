@@ -1,1 +1,24 @@
-<p>{{department.artworks.length}}</p>
+<p-carousel
+  [value]="department.artworks"
+  [numVisible]="4"
+  [numScroll]="3"
+  [circular]="false"
+  [responsiveOptions]="responsiveOptions"
+>
+  <ng-template let-artwork pTemplate="item">
+    <div class="px-4">
+      <div>
+        <div class="p-mb-1"></div>
+        <div class="artwork-container">
+          <img
+            src="{{ artwork.primaryImageSmall }}"
+            alt="artwork image"
+            srcset=""
+            class="artwork-image"
+          />
+          <h6 class="p-mb-1">{{ artwork.title }}</h6>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>

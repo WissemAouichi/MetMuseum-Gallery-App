@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { DepartmentsHttpService } from './service/departments.http.service';
 import { ArtworkCarouselComponent } from './artwork-carousel/artwork-carousel.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule,
+    ButtonModule,
+    ToastModule
   ],
   providers: [DepartmentsHttpService],
   bootstrap: [AppComponent]
