@@ -12,6 +12,7 @@ export class DepartmentsHttpService {
   allArts: any = [];
   allDepartments: Subject<Array<any>> = new Subject();
   allArtworks: Subject<Array<any>> = new Subject();
+  displayModals: Subject<any> = new Subject();
 
   constructor(private httpClient: HttpClient) {}
 

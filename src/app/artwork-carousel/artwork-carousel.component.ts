@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DepartmentsHttpService } from '../service/departments.http.service';
 
 @Component({
   selector: 'app-artwork-carousel',
@@ -7,8 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ArtworkCarouselComponent implements OnInit {
   @Input() department: any;
-  responsiveOptions: { breakpoint: string; numVisible: number; numScroll: number; }[];
-  constructor() {
+
+  responsiveOptions: {
+    breakpoint: string;
+    numVisible: number;
+    numScroll: number;
+  }[];
+  displayModal: any;
+
+  constructor(private departmentsHttpService: DepartmentsHttpService) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -28,6 +36,17 @@ export class ArtworkCarouselComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  showModalDialog(artworkID: number) {
+    this.departmentsHttpService.displayModals.next({
+      displayModal: true,
+      itemID: artworkID,
+    });
+    this.displayModal = true;
+  }
+
+  onDialogClose(event: any) {
+    this.displayModal = false;
   }
 }

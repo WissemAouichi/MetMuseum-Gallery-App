@@ -6,19 +6,22 @@
   [responsiveOptions]="responsiveOptions"
 >
   <ng-template let-artwork pTemplate="item">
-    <div class="px-4">
+    <div class="px-4" >
       <div>
         <div class="p-mb-1"></div>
-        <div class="artwork-container">
+        <div class="artwork-container" >
           <img
             src="{{ artwork.primaryImageSmall }}"
             alt="artwork image"
             srcset=""
             class="artwork-image"
+            (click)="showModalDialog(artwork.objectID)"
           />
           <h6 class="p-mb-1">{{ artwork.title }}</h6>
+          <app-artwork-modal [artwork]="artwork" (displayChange)="onDialogClose($event)"></app-artwork-modal>
         </div>
       </div>
     </div>
   </ng-template>
 </p-carousel>
+

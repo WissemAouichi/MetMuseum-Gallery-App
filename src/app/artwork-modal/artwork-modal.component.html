@@ -1,0 +1,12 @@
+<p-dialog
+  [(visible)]="displayModal"
+  header="Header"
+  [style]="{ width: '70vw' , height: '60vh'}"
+  [baseZIndex]="10000"
+  (onHide)="onClose($event)"
+  appendTo="body"
+>
+  <p>{{artwork.title}}</p>
+  <p>{{artwork.country}}</p>
+  <img src="{{artwork.primaryImageSmall}}" alt="" srcset="" class="modal-image">
+</p-dialog>
