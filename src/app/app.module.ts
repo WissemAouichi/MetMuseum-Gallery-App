@@ -11,18 +11,24 @@ import { ToastModule } from 'primeng/toast';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArtworkModalComponent } from './artwork-modal/artwork-modal.component';
+import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [AppComponent, ArtworkCarouselComponent, ArtworkModalComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     CarouselModule,
     ButtonModule,
     ToastModule,
     DialogModule,
+    InputTextModule,
+    ProgressSpinnerModule,
   ],
   providers: [DepartmentsHttpService],
   bootstrap: [AppComponent],

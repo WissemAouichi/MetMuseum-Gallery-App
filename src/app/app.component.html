@@ -1,6 +1,18 @@
-<div *ngFor="let department of departments">
-  <div *ngIf="department.artworks?.length">
-    <h1>{{ department.displayName }}</h1>
+<nav class="search-nav">
+  <span class="p-input-icon-right">
+    <i class="pi pi-search"></i>
+    <input
+      type="text"
+      pInputText
+      placeholder="Search"
+      [(ngModel)]="searchText"
+    />
+  </span>
+</nav>
+<div class="container-fluid" *ngFor="let department of departments">
+  <div ngIfElse="department.artworks?.length; else Spinner">
+    <h1 class="py-4 department-title">{{ department.displayName }}</h1>
     <app-artwork-carousel [department]="department"></app-artwork-carousel>
   </div>
 </div>
+<div #Spinner style=><p-progressSpinner></p-progressSpinner></div>

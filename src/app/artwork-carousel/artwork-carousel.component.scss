@@ -1,19 +1,40 @@
 .artwork-image {
-    height: 20rem;
-  }
-  
-  .artwork-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
-  }
-  
-  @media screen and (min-width: 1000px) {
-      .p-carousel .p-carousel-indicators .p-carousel-indicator button{
-      width: 10rem !important; 
-      height: 0.5rem !important
+  height: 10rem;
+}
+
+.artwork-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+
+}
+
+@media screen and (min-width: 1000px) {
+  .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    width: 10rem !important;
+    height: 0.5rem !important
       ;
-    }
   }
-  
+}
+
+.artwork-title {
+  color: #e4f2fd;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  height: 4rem;
+  background-color: #417d7a;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.artwork-card {
+  height: 15rem;
+  color: #ede6db;
+}
+
+:host ::ng-deep .p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next{
+  color: green !important;
+}

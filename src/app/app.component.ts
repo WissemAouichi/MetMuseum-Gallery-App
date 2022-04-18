@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   public departments: IDepartments[] = [];
   private departmentsNames: Array<string> = [];
   public artworks: any = [];
+  public searchText: any;
   constructor(private departmentsHttpService: DepartmentsHttpService) {}
 
   ngOnInit() {

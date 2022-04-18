@@ -1,12 +1,25 @@
 <p-dialog
   [(visible)]="displayModal"
   header="Header"
-  [style]="{ width: '70vw' , height: '60vh'}"
+  [style]="{ width: '70vw' , height: '100vh'}"
   [baseZIndex]="10000"
   (onHide)="onClose($event)"
   appendTo="body"
 >
-  <p>{{artwork.title}}</p>
-  <p>{{artwork.country}}</p>
-  <img src="{{artwork.primaryImageSmall}}" alt="" srcset="" class="modal-image">
+
+  <div class="card" style="width: 100%;">
+    <img class="card-img-top" style="max-height:50rem;" src="{{artwork.primaryImageSmall}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" style="color: #1D5C63;">{{artwork.title}}</h5>
+      <p class="card-text"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Department: {{artwork.department}}</li>
+      <li class="list-group-item">Accession Year: {{artwork.accessionYear}}</li>
+      <li class="list-group-item">Accession Number: {{artwork.accessionNumber}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="{{artwork.objectURL}}" class="card-link">Artwork link</a>
+    </div>
+  </div>
 </p-dialog>
