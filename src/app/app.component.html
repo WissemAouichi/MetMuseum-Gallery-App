@@ -2,17 +2,22 @@
   <span class="p-input-icon-right">
     <i class="pi pi-search"></i>
     <input
+      class="search-input"
+      (ngModelChange)="changeSearchInput($event)"
       type="text"
-      pInputText
       placeholder="Search"
       [(ngModel)]="searchText"
     />
   </span>
 </nav>
-<div class="container-fluid" *ngFor="let department of departments">
-  <div ngIfElse="department.artworks?.length; else Spinner">
+
+<div
+  class="container-fluid"
+  *ngFor="let department of departments; let i = index"
+>
+  <div *ngIf="department.artworks?.length">
     <h1 class="py-4 department-title">{{ department.displayName }}</h1>
     <app-artwork-carousel [department]="department"></app-artwork-carousel>
   </div>
 </div>
-<div #Spinner style=><p-progressSpinner></p-progressSpinner></div>
+<!-- <div #Spinner style=><p-progressSpinner></p-progressSpinner></div> -->

@@ -8,9 +8,8 @@ describe('ArtworkCarouselComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArtworkCarouselComponent ]
-    })
-    .compileComponents();
+      declarations: [ArtworkCarouselComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,4 @@ describe('ArtworkCarouselComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
